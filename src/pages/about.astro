@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { siteConfig } from '../data/site';
+import { buildMeta } from '../utils/seo';
+import { breadcrumbSchema, personSchema, serviceSchema } from '../utils/schema';
+
+const meta = buildMeta({
+  title: 'About | Mohammad Rafique Kuwari | AI Automation & RAG Engineer',
+  description:
+    'Learn about Mohammad Rafique Kuwari, an AI Automation & RAG Engineer based in Bhiwandi, Maharashtra, India, focused on document intelligence, RAG systems, and workflow automation.',
+  pathname: '/about',
+  keywords: ['Mohammad Rafique Kuwari', 'AI engineer in Maharashtra', 'AI developer in India']
+});
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' }
+];
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  keywords={meta.keywords}
+  schema={[personSchema, serviceSchema, breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href })))]}
+>
+  <Breadcrumbs crumbs={crumbs} />
+  <section class="section" style="margin-top: 1rem;">
+    <div class="section-header">
+      <p class="kicker">About</p>
+      <h1>About Mohammad Rafique Kuwari</h1>
+    </div>
+    <article class="card reveal">
+      <p><strong>{siteConfig.name}</strong> is an <strong>{siteConfig.title}</strong> {siteConfig.location.toLowerCase()}.</p>
+      <p style="margin-top: 0.9rem;">{siteConfig.description}</p>
+      <p style="margin-top: 0.9rem;">
+        My work focuses on designing AI automation systems that are reliable in production: PDF extraction pipelines, RAG chatbot
+        development for SaaS knowledge assistants, and LLM workflow automation for operational tasks.
+      </p>
+      <p style="margin-top: 0.9rem;">
+        I prioritize architecture clarity, schema-first outputs, retrieval quality, and measurable business impact. I build systems
+        that move from prototype to usable workflows with strong observability and maintainable engineering practices.
+      </p>
+      <p style="margin-top: 0.9rem;">
+        That work spans AI automation engineering, PDF extraction pipelines, retrieval-augmented generation systems for SaaS,
+        and healthcare or routing AI problems where accuracy and operational fit matter more than novelty.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="kicker">Technical Methodology</p>
+      <h2>How projects are delivered from problem definition to production</h2>
+    </div>
+    <div class="grid-2">
+      <article class="card reveal">
+        <h3>1. Discovery and process mapping</h3>
+        <p>Clarify workflow bottlenecks, define expected outputs, and identify data, compliance, and integration constraints.</p>
+      </article>
+      <article class="card reveal">
+        <h3>2. AI and data architecture</h3>
+        <p>Design retrieval, extraction, and orchestration layers with validation, fallback strategies, and traceability.</p>
+      </article>
+      <article class="card reveal">
+        <h3>3. Implementation and integration</h3>
+        <p>Build APIs, processing services, and automation workflows that integrate with existing tools and internal systems.</p>
+      </article>
+      <article class="card reveal">
+        <h3>4. Monitoring and iteration</h3>
+        <p>Track quality metrics, error categories, and drift signals to continuously improve reliability and user trust.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <article class="card reveal">
+      <h2>Explore more</h2>
+      <p><a href="/projects">View projects with architecture details</a></p>
+      <p><a href="/articles">Read implementation articles</a></p>
+      <p><a href="/contact">Contact for AI automation consulting</a></p>
+    </article>
+  </section>
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildMeta } from '../utils/seo';
+
+const meta = buildMeta({
+  title: '404 | Page Not Found',
+  description: 'The requested page could not be found on this portfolio website.',
+  pathname: '/404'
+});
+---
+<BaseLayout title={meta.title} description={meta.description} canonical={meta.canonical} noindex={true}>
+  <section class="section" style="margin-top: 1rem;">
+    <article class="card reveal">
+      <h1>Page not found</h1>
+      <p>The page you requested does not exist.</p>
+      <p style="margin-top: 0.8rem;"><a href="/">Return to homepage</a></p>
+    </article>
+  </section>
+</BaseLayout>

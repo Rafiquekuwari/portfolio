@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import FAQ from '../components/FAQ.astro';
+import { faqs, problemsSolved, services, siteConfig } from '../data/site';
+import { projects } from '../data/projects';
+import { articles } from '../data/articles';
+import { buildMeta } from '../utils/seo';
+import { faqSchema, personSchema, serviceSchema, websiteSchema } from '../utils/schema';
+
+const meta = buildMeta({
+  title: 'Mohammad Rafique Kuwari | AI Automation & RAG Engineer Portfolio',
+  description:
+    'Portfolio of Mohammad Rafique Kuwari, AI Automation & RAG Engineer in Bhiwandi, Maharashtra, India. Explore AI automation, PDF extraction pipelines, RAG chatbot development, and LLM workflow systems.',
+  pathname: '/',
+  keywords: [
+    'AI Automation & RAG Engineer',
+    'AI automation engineer in Bhiwandi',
+    'PDF extraction pipelines',
+    'RAG chatbot development for SaaS'
+  ]
+});
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  keywords={meta.keywords}
+  schema={[personSchema, websiteSchema, serviceSchema, faqSchema(faqs)]}
+>
+  <section class="hero">
+    <article class="card hero-copy reveal">
+      <p class="kicker">AI Automation &amp; RAG Engineer in Bhiwandi, Maharashtra, India</p>
+      <h1>{siteConfig.name}</h1>
+      <h2 style="margin-top: 0.55rem;">{siteConfig.title}</h2>
+      <p>{siteConfig.description}</p>
+      <p class="location">{siteConfig.location}</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/projects">View Projects</a>
+        <a class="btn btn-secondary" href="/contact">Contact Me</a>
+      </div>
+    </article>
+
+    <aside class="card reveal">
+      <h2>How I work</h2>
+      <ul class="list">
+        <li>Define business bottlenecks and measurable targets.</li>
+        <li>Design robust data and retrieval architecture first.</li>
+        <li>Implement AI pipelines with validation and monitoring.</li>
+        <li>Ship practical systems teams can adopt in daily workflows.</li>
+      </ul>
+      <p style="margin-top: 1rem;"><a href="/about">Read more about my methodology</a></p>
+    </aside>
+  </section>
+
+  <section class="section" id="services">
+    <div class="section-header">
+      <p class="kicker">What I Build</p>
+      <h2>AI systems focused on automation, extraction, and knowledge access</h2>
+    </div>
+    <div class="grid">
+      {services.map((service) => (
+        <article class="card reveal">
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" id="problems">
+    <div class="section-header">
+      <p class="kicker">Problems I Solve</p>
+      <h2>From manual bottlenecks to scalable AI workflows</h2>
+    </div>
+    <div class="grid">
+      {problemsSolved.map((problem) => (
+        <article class="card reveal">
+          <h3>{problem.title}</h3>
+          <p>{problem.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" id="featured-projects">
+    <div class="section-header">
+      <p class="kicker">Featured Projects</p>
+      <h2>Selected AI automation, PDF extraction, and RAG systems</h2>
+    </div>
+    <div class="grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+    <p style="margin-top: 1rem;"><a href="/projects">See all project details and architecture highlights</a></p>
+  </section>
+
+  <section class="section" id="articles">
+    <div class="section-header">
+      <p class="kicker">Articles / Insights</p>
+      <h2>Implementation notes from real AI engineering workflows</h2>
+    </div>
+    <div class="grid">
+      {articles.map((article) => <ArticleCard article={article} />)}
+    </div>
+    <p style="margin-top: 1rem;"><a href="/articles">Browse all AI engineering articles</a></p>
+  </section>
+
+  <section class="section" id="about-preview">
+    <div class="section-header">
+      <p class="kicker">About</p>
+      <h2>Technical focus and problem-solving approach</h2>
+    </div>
+    <article class="card reveal">
+      <p>
+        I am an AI Automation & RAG Engineer who builds reliable systems for document intelligence, SaaS knowledge assistants,
+        and LLM workflow automation. My focus is on machine-readable architectures that connect models with operational data,
+        so teams can replace repetitive tasks with structured and traceable AI workflows.
+      </p>
+      <p style="margin-top: 0.9rem;">
+        Based in Bhiwandi, Maharashtra, India, I work on AI automation projects that need clear data flow, robust retrieval,
+        and practical integration into existing business systems.
+      </p>
+      <p style="margin-top: 0.9rem;"><a href="/about">Read my full background and technical approach</a></p>
+    </article>
+  </section>
+
+  <FAQ />
+
+  <section class="section" id="contact">
+    <div class="section-header">
+      <p class="kicker">Contact</p>
+      <h2>Let’s discuss your AI automation or RAG project</h2>
+    </div>
+    <article class="card reveal">
+      <p>Email: <a href={siteConfig.email}>{siteConfig.emailLabel}</a></p>
+      <p>GitHub: <a href={siteConfig.github}>{siteConfig.githubLabel}</a></p>
+      <p>LinkedIn: <a href={siteConfig.linkedin}>{siteConfig.linkedinLabel}</a></p>
+      <p>Portfolio: <a href={siteConfig.siteUrl}>{siteConfig.siteUrl}</a></p>
+    </article>
+  </section>
+</BaseLayout>

@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { articles } from '../../data/articles';
+import { projects } from '../../data/projects';
+import { siteConfig } from '../../data/site';
+import { buildMeta } from '../../utils/seo';
+import { articleSchema, breadcrumbSchema } from '../../utils/schema';
+
+export function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article }
+  }));
+}
+
+const { article } = Astro.props;
+
+const meta = buildMeta({
+  title: `${article.title} | Mohammad Rafique Kuwari`,
+  description: article.description,
+  pathname: `/articles/${article.slug}`,
+  type: 'article',
+  keywords: article.tags
+});
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Articles', href: '/articles' },
+  { label: article.title, href: `/articles/${article.slug}` }
+];
+
+const artSchema = articleSchema(article.slug);
+const relatedProjects = projects.filter((project) => article.relatedProjectSlugs?.includes(project.slug));
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  ogType="article"
+  keywords={meta.keywords}
+  schema={[breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href }))), ...(artSchema ? [artSchema] : [])]}
+>
+  <Breadcrumbs crumbs={crumbs} />
+  <article class="card reveal">
+    <p class="kicker">Article</p>
+    <h1>{article.title}</h1>
+    <p class="meta" style="margin-top: 0.6rem;">{article.publishedDate} · {article.readTime}</p>
+    <p style="margin-top: 0.7rem;">{article.description}</p>
+    <p style="margin-top: 0.8rem;">
+      Written by {siteConfig.name}, an {siteConfig.title} based in {siteConfig.locality}, {siteConfig.region}, {siteConfig.country},
+      with a practical focus on AI automation, PDF extraction pipelines, RAG systems, and operational AI workflows.
+    </p>
+
+    <section class="section" style="margin-top: 2rem;">
+      {article.sections.map((section: { heading: string; content: string }) => (
+        <div style="margin-bottom: 1.25rem;">
+          <h2>{section.heading}</h2>
+          <p>{section.content}</p>
+        </div>
+      ))}
+    </section>
+
+    <section class="section">
+      <h2>Topics covered</h2>
+      <div>
+        {article.tags.map((tag: string) => (
+          <span class="pill">{tag}</span>
+        ))}
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Continue exploring</h2>
+      {relatedProjects.map((project) => (
+        <p><a href={`/projects/${project.slug}`}>See project: {project.title}</a></p>
+      ))}
+      <p><a href="/projects">See all project case studies</a></p>
+      <p><a href="/contact">Contact for implementation support</a></p>
+    </section>
+  </article>
+</BaseLayout>

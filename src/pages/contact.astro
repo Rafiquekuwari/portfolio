@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { siteConfig } from '../data/site';
+import { buildMeta } from '../utils/seo';
+import { breadcrumbSchema, personSchema } from '../utils/schema';
+
+const meta = buildMeta({
+  title: 'Contact | Mohammad Rafique Kuwari',
+  description:
+    'Contact Mohammad Rafique Kuwari for AI automation development, PDF extraction systems, RAG chatbot development, and LLM workflow automation projects.',
+  pathname: '/contact',
+  keywords: ['contact AI automation engineer', 'AI consultant in Bhiwandi', 'RAG engineer India']
+});
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Contact', href: '/contact' }
+];
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  keywords={meta.keywords}
+  schema={[personSchema, breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href })))]}
+>
+  <Breadcrumbs crumbs={crumbs} />
+  <section class="section" style="margin-top: 1rem;">
+    <div class="section-header">
+      <p class="kicker">Contact</p>
+      <h1>Start a conversation about your AI workflow problem</h1>
+    </div>
+
+    <div class="grid-2">
+      <article class="card reveal">
+        <h2>Project fit</h2>
+        <p>
+          Best fit for teams looking for practical AI implementation in document intelligence, RAG assistants, and LLM-powered workflow automation.
+        </p>
+        <p style="margin-top: 0.7rem;"><strong>Location:</strong> {siteConfig.location}</p>
+      </article>
+
+      <article class="card reveal">
+        <h2>Contact channels</h2>
+        <p><strong>Email:</strong> <a href={siteConfig.email}>{siteConfig.emailLabel}</a></p>
+        <p><strong>GitHub:</strong> <a href={siteConfig.github}>{siteConfig.githubLabel}</a></p>
+        <p><strong>LinkedIn:</strong> <a href={siteConfig.linkedin}>{siteConfig.linkedinLabel}</a></p>
+        <p><strong>Website:</strong> <a href={siteConfig.siteUrl}>{siteConfig.siteUrl}</a></p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

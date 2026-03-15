@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { projects } from '../../data/projects';
+import { articles } from '../../data/articles';
+import { siteConfig } from '../../data/site';
+import { buildMeta } from '../../utils/seo';
+import { breadcrumbSchema, projectSchema } from '../../utils/schema';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project }
+  }));
+}
+
+const { project } = Astro.props;
+
+const meta = buildMeta({
+  title: `${project.title} | Project by Mohammad Rafique Kuwari`,
+  description: project.summary,
+  pathname: `/projects/${project.slug}`,
+  keywords: project.keywords ?? []
+});
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Projects', href: '/projects' },
+  { label: project.title, href: `/projects/${project.slug}` }
+];
+
+const projSchema = projectSchema(project.slug);
+const relatedArticles = articles.filter((article) => project.relatedArticleSlugs?.includes(article.slug));
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  keywords={meta.keywords}
+  schema={[breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href }))), ...(projSchema ? [projSchema] : [])]}
+>
+  <Breadcrumbs crumbs={crumbs} />
+  <article class="card reveal">
+    <p class="kicker">Project</p>
+    <h1>{project.title}</h1>
+    <p class="meta" style="margin-top: 0.6rem;">{project.summary}</p>
+    <p style="margin-top: 0.8rem;">
+      This project reflects how {siteConfig.name} approaches AI automation engineering: define the operational bottleneck,
+      design a reliable data flow, and build outputs that are useful inside real business systems.
+    </p>
+
+    <section class="section" style="margin-top: 2rem;">
+      <h2>Business problem</h2>
+      <p>{project.problem}</p>
+    </section>
+
+    <section class="section">
+      <h2>Approach</h2>
+      <ul class="list">
+        {project.approach.map((step: string) => (
+          <li>{step}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Tech stack</h2>
+      <div>
+        {project.techStack.map((tech: string) => (
+          <span class="pill">{tech}</span>
+        ))}
+      </div>
+    </section>
+
+    {project.architecture && (
+      <section class="section">
+        <h2>Architecture highlights</h2>
+        <ul class="list">
+          {project.architecture.map((line: string) => (
+            <li>{line}</li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <section class="section">
+      <h2>Expected value</h2>
+      <p>{project.outcome}</p>
+    </section>
+
+    <section class="section">
+      <h2>Related reading</h2>
+      {relatedArticles.map((article) => (
+        <p><a href={`/articles/${article.slug}`}>Read: {article.title}</a></p>
+      ))}
+      <p><a href="/articles">Browse all AI engineering articles</a></p>
+      <p><a href="/contact">Discuss a similar project</a></p>
+    </section>
+  </article>
+</BaseLayout>

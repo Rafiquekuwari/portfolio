@@ -1,0 +1,17 @@
+---
+import type { Project } from '../data/projects';
+
+const { project } = Astro.props as { project: Project };
+---
+<article class="card reveal">
+  <h3><a href={`/projects/${project.slug}`}>{project.title}</a></h3>
+  <p class="meta">{project.summary}</p>
+  <p><strong>Business problem:</strong> {project.problem}</p>
+  <p><strong>Outcome:</strong> {project.outcome}</p>
+  <div>
+    {project.techStack.map((tech) => (
+      <span class="pill">{tech}</span>
+    ))}
+  </div>
+  <p><a href={`/projects/${project.slug}`}>Read architecture and approach</a></p>
+</article>

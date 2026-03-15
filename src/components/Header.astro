@@ -1,0 +1,43 @@
+---
+import { siteConfig } from '../data/site';
+
+const pathname = Astro.url.pathname;
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">{siteConfig.name}</a>
+    <nav class="nav" aria-label="Primary navigation">
+      {siteConfig.nav.map((item) => {
+        const isActive = item.href === '/' ? pathname === '/' : pathname === item.href || pathname.startsWith(`${item.href}/`);
+        return (
+          <a href={item.href} class={isActive ? 'active' : ''} aria-current={isActive ? 'page' : undefined}>
+            {item.label}
+          </a>
+        );
+      })}
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+  </div>
+</header>
+
+<script is:inline>
+  const root = document.documentElement;
+  const key = 'theme-pref';
+  const setTheme = (value) => {
+    root.setAttribute('data-theme', value);
+    localStorage.setItem(key, value);
+  };
+
+  const saved = localStorage.getItem(key);
+  if (saved) {
+    setTheme(saved);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setTheme('dark');
+  }
+
+  const button = document.querySelector('#theme-toggle');
+  button?.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+  });
+</script>

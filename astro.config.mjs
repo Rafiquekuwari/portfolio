@@ -1,0 +1,8 @@
+import { defineConfig } from 'astro/config';
+
+export default defineConfig({
+  site: 'https://example.netlify.app',
+  output: 'static',
+  compressHTML: true,
+  trailingSlash: 'never'
+});

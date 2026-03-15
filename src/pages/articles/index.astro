@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { articles } from '../../data/articles';
+import { buildMeta } from '../../utils/seo';
+import { breadcrumbSchema, personSchema } from '../../utils/schema';
+
+const meta = buildMeta({
+  title: 'Articles | AI Automation, PDF Extraction, and RAG Insights',
+  description:
+    'Articles by Mohammad Rafique Kuwari on PDF extraction pipelines, RAG chatbot systems for SaaS, LLM workflow automation, and healthcare routing optimization.',
+  pathname: '/articles',
+  keywords: ['AI engineering articles', 'PDF extraction pipeline guide', 'RAG SaaS knowledge base']
+});
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Articles', href: '/articles' }
+];
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  keywords={meta.keywords}
+  schema={[personSchema, breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href })))]}
+>
+  <Breadcrumbs crumbs={crumbs} />
+  <section class="section" style="margin-top: 1rem;">
+    <div class="section-header">
+      <p class="kicker">Articles</p>
+      <h1>AI engineering insights and implementation guides</h1>
+    </div>
+    <p class="meta" style="margin-bottom: 1rem;">
+      Notes on building reliable AI automation systems, PDF to structured JSON pipelines, RAG chatbots for SaaS knowledge bases,
+      and healthcare routing AI workflows.
+    </p>
+    <div class="grid">
+      {articles.map((article) => <ArticleCard article={article} />)}
+    </div>
+  </section>
+</BaseLayout>

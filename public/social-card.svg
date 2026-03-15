@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Mohammad Rafique Kuwari portfolio social preview</title>
+  <desc id="desc">AI Automation and RAG Engineer in Bhiwandi, Maharashtra, India.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f1722" />
+      <stop offset="100%" stop-color="#134e4a" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#16324f" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0e6b5b" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1040" cy="120" r="170" fill="#7fb1ff" opacity="0.12" />
+  <circle cx="170" cy="520" r="220" fill="#39b8a0" opacity="0.16" />
+  <rect x="70" y="72" width="1060" height="486" rx="28" fill="url(#panel)" stroke="#d8f3ed" stroke-opacity="0.18" />
+  <text x="120" y="168" fill="#a7f3d0" font-family="Manrope, Segoe UI, sans-serif" font-size="28" font-weight="700">
+    AI Automation • PDF Extraction • RAG Systems
+  </text>
+  <text x="120" y="262" fill="#ffffff" font-family="Manrope, Segoe UI, sans-serif" font-size="68" font-weight="800">
+    Mohammad Rafique Kuwari
+  </text>
+  <text x="120" y="330" fill="#dbeafe" font-family="Manrope, Segoe UI, sans-serif" font-size="34" font-weight="600">
+    AI Automation &amp; RAG Engineer
+  </text>
+  <text x="120" y="406" fill="#e2e8f0" font-family="Manrope, Segoe UI, sans-serif" font-size="28">
+    Builds AI systems for document intelligence, SaaS knowledge assistants,
+  </text>
+  <text x="120" y="446" fill="#e2e8f0" font-family="Manrope, Segoe UI, sans-serif" font-size="28">
+    LLM workflow automation, healthcare AI, and routing optimization.
+  </text>
+  <text x="120" y="518" fill="#a7f3d0" font-family="Manrope, Segoe UI, sans-serif" font-size="26" font-weight="700">
+    Based in Bhiwandi, Maharashtra, India
+  </text>
+</svg>

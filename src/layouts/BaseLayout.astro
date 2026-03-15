@@ -1,0 +1,53 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeadMeta from '../components/HeadMeta.astro';
+import JsonLd from '../components/JsonLd.astro';
+import '../styles/global.css';
+
+type Props = {
+  title: string;
+  description: string;
+  canonical: string;
+  ogType?: 'website' | 'article';
+  schema?: object[];
+  noindex?: boolean;
+  keywords?: string[];
+};
+
+const { title, description, canonical, ogType = 'website', schema = [], noindex = false, keywords = [] } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Mohammad Rafique Kuwari" />
+    <meta name="theme-color" content="#0e6b5b" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <HeadMeta
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogType={ogType}
+      noindex={noindex}
+      keywords={keywords}
+    />
+    {schema.map((entry) => <JsonLd data={entry} />)}
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

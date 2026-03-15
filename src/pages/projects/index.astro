@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+import { buildMeta } from '../../utils/seo';
+import { breadcrumbSchema, personSchema } from '../../utils/schema';
+
+const meta = buildMeta({
+  title: 'Projects | AI Automation, PDF Extraction, and RAG Systems',
+  description:
+    'Explore AI projects by Mohammad Rafique Kuwari including PDF extraction automation, SaaS RAG chatbot development, and healthcare routing optimization AI.',
+  pathname: '/projects',
+  keywords: ['AI automation projects', 'PDF extraction automation', 'RAG chatbot developer for SaaS']
+});
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Projects', href: '/projects' }
+];
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  keywords={meta.keywords}
+  schema={[personSchema, breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href })))]}
+>
+  <Breadcrumbs crumbs={crumbs} />
+  <section class="section" style="margin-top: 1rem;">
+    <div class="section-header">
+      <p class="kicker">Projects</p>
+      <h1>AI automation and RAG engineering projects</h1>
+    </div>
+    <p class="meta" style="margin-bottom: 1rem;">
+      Case-study style examples focused on business problems, implementation approach, and production architecture across AI automation,
+      PDF extraction pipelines, SaaS RAG chatbot development, and healthcare routing optimization.
+    </p>
+    <div class="grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</BaseLayout>

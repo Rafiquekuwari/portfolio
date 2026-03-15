@@ -1,0 +1,17 @@
+---
+import { faqs } from '../data/site';
+---
+<section class="section" id="faq">
+  <div class="section-header">
+    <p class="kicker">FAQ</p>
+    <h2>Answers to common AI automation and RAG questions</h2>
+  </div>
+  <div class="grid-2">
+    {faqs.map((item) => (
+      <article class="card reveal">
+        <h3>{item.question}</h3>
+        <p>{item.answer}</p>
+      </article>
+    ))}
+  </div>
+</section>
