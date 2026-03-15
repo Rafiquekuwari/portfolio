@@ -47,11 +47,12 @@ export const serviceSchema = {
   name: `${siteConfig.name} AI Services`,
   description: siteConfig.description,
   url: siteConfig.siteUrl,
-  serviceOffered: {
+  offers: {
     '@type': 'Service',
-    name: 'AI Automation Development'
+    name: 'AI Automation Development',
+    description: 'Developing AI-based automation systems.'
   },
-  serviceProvider: {
+  provider: {
     '@type': 'Person',
     name: siteConfig.name,
     jobTitle: siteConfig.title,
