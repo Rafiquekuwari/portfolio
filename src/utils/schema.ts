@@ -47,9 +47,26 @@ export const serviceSchema = {
   name: `${siteConfig.name} AI Services`,
   description: siteConfig.description,
   url: siteConfig.siteUrl,
+  serviceType: {
+    '@type': 'Service',
+    name: 'AI Automation Development'
+  },
   provider: {
     '@type': 'Person',
-    '@id': `${siteConfig.siteUrl}#person`
+    name: siteConfig.name,
+    jobTitle: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.siteUrl,
+    sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
+    knowsAbout: [
+      'AI automation systems',
+      'PDF extraction pipelines',
+      'RAG chatbot development',
+      'SaaS knowledge assistants',
+      'LLM workflow automation',
+      'Healthcare AI',
+      'Routing optimization AI'
+    ]
   },
   address: {
     '@type': 'PostalAddress',
@@ -60,8 +77,7 @@ export const serviceSchema = {
   areaServed: {
     '@type': 'Country',
     name: 'India'
-  },
-  serviceType: ['AI Automation Development', 'PDF Extraction Systems', 'RAG Chatbot Development', 'LLM Workflow Automation']
+  }
 };
 
 export const breadcrumbSchema = (items: { name: string; path: string }[]) => ({
