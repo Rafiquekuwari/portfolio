@@ -21,7 +21,7 @@ export const personSchema = {
     '@type': 'Place',
     name: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`
   },
-  sameAs: [siteConfig.github, siteConfig.linkedin],
+  sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
   knowsAbout: siteConfig.knowsAbout,
   image: absoluteUrl(siteConfig.socialImage)
 };

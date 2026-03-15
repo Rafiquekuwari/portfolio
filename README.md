@@ -100,14 +100,8 @@ Update these files to edit identity, links, services, projects, and articles:
 - `src/data/projects.ts`
 - `src/data/articles.ts`
 
-Replace placeholders in `src/data/site.ts`:
-- `siteUrl`
-- `email`
-- `github`
-- `linkedin`
-
-Also update:
-- `public/robots.txt` sitemap URL
+Current deployment URL:
+- `https://mohammedrk.netlify.app`
 
 ## Local development
 
@@ -148,10 +142,7 @@ netlify deploy --prod --dir=dist
 - CSS-first responsive design with semantic HTML
 
 ## Suggested post-deploy updates
-1. Replace `https://example.netlify.app` with your real Netlify domain/custom domain.
-2. Add real social profile links.
-3. Install `@astrojs/check` and update the lockfile so `npm run check` performs full Astro type checking in CI.
-4. Replace the placeholder social preview in `public/social-card.svg` if you want a custom share image.
-5. Add project screenshots if needed (optimized web images).
-6. Submit sitemap URL to Google Search Console and Bing Webmaster Tools.
+1. Install `@astrojs/check` and update the lockfile so `npm run check` performs full Astro type checking in CI.
+2. Add project screenshots if needed (optimized web images).
+3. Submit the sitemap URL to Google Search Console and Bing Webmaster Tools.
 # portfolio
