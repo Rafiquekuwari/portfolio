@@ -13,9 +13,11 @@ export const personSchema = {
   url: siteConfig.siteUrl,
   address: {
     '@type': 'PostalAddress',
+    streetAddress: siteConfig.streetAddress,
     addressLocality: siteConfig.locality,
     addressRegion: siteConfig.region,
-    addressCountry: siteConfig.country
+    postalCode: siteConfig.postalCode,
+    addressCountry: siteConfig.countryCode
   },
   homeLocation: {
     '@type': 'Place',
@@ -64,7 +66,15 @@ export const serviceSchema = {
             jobTitle: siteConfig.title,
             description: siteConfig.description,
             url: siteConfig.siteUrl,
-            sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram]
+            sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: siteConfig.streetAddress,
+              addressLocality: siteConfig.locality,
+              addressRegion: siteConfig.region,
+              postalCode: siteConfig.postalCode,
+              addressCountry: siteConfig.countryCode
+            }
           }
         }
       }
@@ -72,9 +82,11 @@ export const serviceSchema = {
   },
   address: {
     '@type': 'PostalAddress',
+    streetAddress: siteConfig.streetAddress,
     addressLocality: siteConfig.locality,
     addressRegion: siteConfig.region,
-    addressCountry: siteConfig.country
+    postalCode: siteConfig.postalCode,
+    addressCountry: siteConfig.countryCode
   },
   areaServed: {
     '@type': 'Country',

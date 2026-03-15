@@ -6,9 +6,12 @@ export const siteConfig = {
   description:
     'I build AI systems that help businesses reduce manual work, turn unstructured documents into usable data, and build AI chat systems that make knowledge easier to access.',
   location: 'Based in Bhiwandi, Maharashtra, India',
+  streetAddress: '2nd Nizampur',
   locality: 'Bhiwandi',
   region: 'Maharashtra',
   country: 'India',
+  countryCode: 'IN',
+  postalCode: '421302',
   siteUrl: 'https://mohammedrk.netlify.app',
   socialImage: '/social-card.svg',
   email: 'mailto:kuwari84@gmail.com',
