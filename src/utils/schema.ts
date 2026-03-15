@@ -42,31 +42,32 @@ export const websiteSchema = {
 
 export const serviceSchema = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
+  '@type': 'Organization',
   '@id': `${siteConfig.siteUrl}#service`,
-  name: `${siteConfig.name} AI Services`,
-  description: siteConfig.description,
+  name: siteConfig.name,
   url: siteConfig.siteUrl,
-  offers: {
-    '@type': 'Service',
-    name: 'AI Automation Development',
-    description: 'Developing AI-based automation systems.'
-  },
-  provider: {
-    '@type': 'Person',
-    name: siteConfig.name,
-    jobTitle: siteConfig.title,
-    description: siteConfig.description,
-    url: siteConfig.siteUrl,
-    sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
-    knowsAbout: [
-      'AI automation systems',
-      'PDF extraction pipelines',
-      'RAG chatbot development',
-      'SaaS knowledge assistants',
-      'LLM workflow automation',
-      'Healthcare AI',
-      'Routing optimization AI'
+  description: 'AI Automation & RAG engineering services.',
+  sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'AI Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'AI Automation Development',
+          serviceType: 'AI Automation Development',
+          provider: {
+            '@type': 'Person',
+            name: siteConfig.name,
+            jobTitle: siteConfig.title,
+            description: siteConfig.description,
+            url: siteConfig.siteUrl,
+            sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram]
+          }
+        }
+      }
     ]
   },
   address: {
