@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FAQ from '../../components/FAQ.astro';
+import { buildMeta } from '../../utils/seo';
+import { breadcrumbSchema, faqSchema, localBusinessSchema, localServiceSchema, personSchema, webPageSchema } from '../../utils/schema';
+
+const meta = buildMeta({
+  title: 'Document Workflow Automation in Bhiwandi | Mohammed Rafique Kuwari',
+  description:
+    'Document workflow automation in Bhiwandi for PDF intake, extraction, validation, and routing into business systems. Mohammed Rafique Kuwari builds structured document workflows that reduce manual processing.',
+  pathname: '/bhiwandi/document-workflow-automation',
+  keywords: [
+    'Document workflow automation in Bhiwandi',
+    'Workflow automation developer in Bhiwandi',
+    'AI automation for businesses in Bhiwandi'
+  ]
+});
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Document Workflow Automation in Bhiwandi', href: '/bhiwandi/document-workflow-automation' }
+];
+
+const localFaqs = [
+  {
+    question: 'What is document workflow automation in Bhiwandi?',
+    answer:
+      'Document workflow automation in Bhiwandi means using AI, OCR, validation, and workflow logic to process documents more reliably and move structured outputs into business systems.'
+  },
+  {
+    question: 'What kinds of documents can be automated?',
+    answer:
+      'Invoices, forms, reports, scanned files, SOP-driven records, and other document-heavy workflows can often be automated with the right extraction and validation design.'
+  },
+  {
+    question: 'Why is validation important in document automation?',
+    answer:
+      'Validation is what turns extraction into a usable workflow. Without validation, document automation can produce outputs that look structured but are not reliable enough for operations.'
+  }
+];
+
+const service = localServiceSchema({
+  name: 'Document Workflow Automation in Bhiwandi',
+  path: '/bhiwandi/document-workflow-automation',
+  description:
+    'Document workflow automation in Bhiwandi for PDF extraction, schema validation, exception handling, and structured handoff into operational systems.',
+  serviceType: 'PDF Extraction and Document Workflow Automation',
+  keywords: ['Document workflow automation in Bhiwandi', 'PDF extraction automation in Bhiwandi']
+});
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  keywords={meta.keywords}
+  schema={[
+    personSchema,
+    localBusinessSchema,
+    service,
+    webPageSchema({
+      name: 'Document Workflow Automation in Bhiwandi',
+      path: '/bhiwandi/document-workflow-automation',
+      description: meta.description,
+      keywords: meta.keywords
+    }),
+    breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href }))),
+    faqSchema(localFaqs)
+  ]}
+>
+  <Breadcrumbs crumbs={crumbs} />
+  <section class="section" style="margin-top: 1rem;">
+    <div class="section-header">
+      <p class="kicker">Bhiwandi Service Page</p>
+      <h1>Document workflow automation in Bhiwandi</h1>
+    </div>
+    <article class="card reveal">
+      <p>
+        I build document workflow automation in Bhiwandi for teams that still depend on manual handling of PDFs, forms, reports,
+        and scanned files. The goal is to turn unstructured documents into usable structured outputs and move them through the
+        business with validation, routing, and exception handling.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="kicker">Service</p>
+      <h2>What this includes</h2>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <h3>PDF extraction</h3>
+        <p>Classify, parse, and extract structured fields from inconsistent or scanned business documents.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Validation and review</h3>
+        <p>Check outputs against rules and send uncertain records into human review instead of pushing bad data downstream.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Workflow handoff</h3>
+        <p>Push validated outputs into business tools, queues, or APIs so the document process becomes an operational workflow.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="kicker">Who This Is For</p>
+      <h2>Best fit use cases</h2>
+    </div>
+    <article class="card reveal">
+      <p>
+        This is useful for finance, operations, support, compliance, and document-heavy teams in Bhiwandi that spend too much
+        time extracting data manually or moving records between systems by hand.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card reveal">
+      <h2>Continue exploring</h2>
+      <p><a href="/bhiwandi/workflow-automation-developer">Workflow automation developer in Bhiwandi</a></p>
+      <p><a href="/articles/ai-automation-for-businesses-in-bhiwandi">AI automation for businesses in Bhiwandi</a></p>
+      <p><a href="/projects/pdf-extraction-automation">PDF extraction automation project</a></p>
+      <p><a href="/about">About Mohammed Rafique Kuwari</a></p>
+      <p><a href="/contact">Contact Mohammed Rafique Kuwari</a></p>
+    </article>
+  </section>
+
+  <FAQ faqs={localFaqs} heading="Answers to common document workflow automation questions in Bhiwandi" />
+</BaseLayout>

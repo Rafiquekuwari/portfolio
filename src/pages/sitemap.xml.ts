@@ -3,7 +3,18 @@ import { articles } from '../data/articles';
 import { projects } from '../data/projects';
 import { siteConfig } from '../data/site';
 
-const staticPages = ['/', '/about', '/projects', '/articles', '/contact', '/bhiwandi/ai-automation', '/bhiwandi/rag-systems'];
+const staticPages = [
+  '/',
+  '/about',
+  '/projects',
+  '/articles',
+  '/contact',
+  '/bhiwandi/ai-automation',
+  '/bhiwandi/rag-systems',
+  '/bhiwandi/ai-chatbot-developer',
+  '/bhiwandi/workflow-automation-developer',
+  '/bhiwandi/document-workflow-automation'
+];
 
 export const GET: APIRoute = () => {
   const now = new Date().toISOString();

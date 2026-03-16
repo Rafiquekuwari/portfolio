@@ -210,6 +210,31 @@ export const localServiceSchema = ({
   }
 });
 
+export const webPageSchema = ({
+  name,
+  path,
+  description,
+  keywords = []
+}: {
+  name: string;
+  path: string;
+  description: string;
+  keywords?: string[];
+}) => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${absoluteUrl(path)}#webpage`,
+  name,
+  description,
+  url: absoluteUrl(path),
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': `${siteConfig.siteUrl}#website`
+  },
+  about: keywords,
+  keywords
+});
+
 export const breadcrumbSchema = (items: { name: string; path: string }[]) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',

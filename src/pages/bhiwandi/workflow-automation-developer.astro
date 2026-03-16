@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FAQ from '../../components/FAQ.astro';
+import { buildMeta } from '../../utils/seo';
+import { breadcrumbSchema, faqSchema, localBusinessSchema, localServiceSchema, personSchema, webPageSchema } from '../../utils/schema';
+
+const meta = buildMeta({
+  title: 'Workflow Automation Developer in Bhiwandi | Mohammed Rafique Kuwari',
+  description:
+    'Workflow automation developer in Bhiwandi for AI-assisted operations, document routing, and LLM-powered business processes. Mohammed Rafique Kuwari builds usable automation systems for real teams.',
+  pathname: '/bhiwandi/workflow-automation-developer',
+  keywords: [
+    'Workflow automation developer in Bhiwandi',
+    'AI automation for businesses in Bhiwandi',
+    'Document workflow automation in Bhiwandi'
+  ]
+});
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Workflow Automation Developer in Bhiwandi', href: '/bhiwandi/workflow-automation-developer' }
+];
+
+const localFaqs = [
+  {
+    question: 'What does a workflow automation developer in Bhiwandi do?',
+    answer:
+      'A workflow automation developer in Bhiwandi designs and implements systems that reduce repetitive work across approvals, document routing, status handling, and operational task flows.'
+  },
+  {
+    question: 'Can workflow automation include LLMs and AI models?',
+    answer:
+      'Yes. Workflow automation can combine LLMs with validation rules, APIs, extraction pipelines, and business logic when language tasks are part of the process.'
+  },
+  {
+    question: 'What kinds of workflows are good candidates for automation?',
+    answer:
+      'Good candidates include intake workflows, exception handling, approvals, support triage, document review, and repetitive coordination tasks.'
+  }
+];
+
+const service = localServiceSchema({
+  name: 'Workflow Automation Development in Bhiwandi',
+  path: '/bhiwandi/workflow-automation-developer',
+  description:
+    'Workflow automation development in Bhiwandi for LLM-assisted operations, routing logic, approvals, and business process orchestration.',
+  serviceType: 'Workflow Automation with LLMs',
+  keywords: ['Workflow automation developer in Bhiwandi', 'AI automation for businesses in Bhiwandi']
+});
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  keywords={meta.keywords}
+  schema={[
+    personSchema,
+    localBusinessSchema,
+    service,
+    webPageSchema({
+      name: 'Workflow Automation Developer in Bhiwandi',
+      path: '/bhiwandi/workflow-automation-developer',
+      description: meta.description,
+      keywords: meta.keywords
+    }),
+    breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href }))),
+    faqSchema(localFaqs)
+  ]}
+>
+  <Breadcrumbs crumbs={crumbs} />
+  <section class="section" style="margin-top: 1rem;">
+    <div class="section-header">
+      <p class="kicker">Bhiwandi Service Page</p>
+      <h1>Workflow automation developer in Bhiwandi</h1>
+    </div>
+    <article class="card reveal">
+      <p>
+        I work as a workflow automation developer in Bhiwandi for businesses that need to reduce repetitive operational work and
+        improve the way tasks move through the business. That includes approval flows, routing logic, exception handling, document
+        intake, and LLM-assisted decision support where language processing is part of the workflow.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="kicker">Service</p>
+      <h2>What this work includes</h2>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <h3>Operational workflow design</h3>
+        <p>Map the process, define outputs, and identify where AI or automation can remove avoidable manual work.</p>
+      </article>
+      <article class="card reveal">
+        <h3>LLM-assisted steps</h3>
+        <p>Use language models for classification, summarization, drafting, and routing where they add useful leverage.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Validation and handoff</h3>
+        <p>Keep the process dependable with validation rules, exception queues, and integration into downstream tools.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="kicker">Who This Is For</p>
+      <h2>Best fit teams and use cases</h2>
+    </div>
+    <article class="card reveal">
+      <p>
+        This is a good fit for operations teams, document-heavy teams, support teams, and businesses in Bhiwandi that need better
+        task routing, less manual follow-up, and more consistent workflow execution.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card reveal">
+      <h2>Continue exploring</h2>
+      <p><a href="/bhiwandi/document-workflow-automation">Document workflow automation in Bhiwandi</a></p>
+      <p><a href="/bhiwandi/ai-chatbot-developer">AI chatbot developer in Bhiwandi</a></p>
+      <p><a href="/articles/ai-automation-for-businesses-in-bhiwandi">AI automation for businesses in Bhiwandi</a></p>
+      <p><a href="/projects/pdf-extraction-automation">PDF extraction automation project</a></p>
+      <p><a href="/contact">Contact Mohammed Rafique Kuwari</a></p>
+    </article>
+  </section>
+
+  <FAQ faqs={localFaqs} heading="Answers to common workflow automation questions in Bhiwandi" />
+</BaseLayout>

@@ -31,6 +31,19 @@ const crumbs = [
 
 const projSchema = projectSchema(project.slug);
 const relatedArticles = articles.filter((article) => project.relatedArticleSlugs?.includes(article.slug));
+const localLinksByProject: Record<string, { label: string; href: string }[]> = {
+  'pdf-extraction-automation': [
+    { label: 'Document workflow automation in Bhiwandi', href: '/bhiwandi/document-workflow-automation' },
+    { label: 'Workflow automation developer in Bhiwandi', href: '/bhiwandi/workflow-automation-developer' },
+    { label: 'AI automation for businesses in Bhiwandi', href: '/articles/ai-automation-for-businesses-in-bhiwandi' }
+  ],
+  'saas-rag-chatbot': [
+    { label: 'RAG chatbot developer in Bhiwandi', href: '/bhiwandi/rag-systems' },
+    { label: 'AI chatbot developer in Bhiwandi', href: '/bhiwandi/ai-chatbot-developer' },
+    { label: 'RAG chatbot use cases for businesses in Bhiwandi', href: '/articles/rag-chatbot-use-cases-for-businesses-in-bhiwandi' }
+  ]
+};
+const localLinks = localLinksByProject[project.slug] ?? [];
 ---
 <BaseLayout
   title={meta.title}
@@ -92,6 +105,9 @@ const relatedArticles = articles.filter((article) => project.relatedArticleSlugs
       <h2>Related reading</h2>
       {relatedArticles.map((article) => (
         <p><a href={`/articles/${article.slug}`}>Read: {article.title}</a></p>
+      ))}
+      {localLinks.map((link) => (
+        <p><a href={link.href}>{link.label}</a></p>
       ))}
       <p><a href="/articles">Browse all AI engineering articles</a></p>
       <p><a href="/contact">Discuss a similar project</a></p>

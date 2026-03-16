@@ -32,6 +32,7 @@ const crumbs = [
 
 const artSchema = articleSchema(article.slug);
 const relatedProjects = projects.filter((project) => article.relatedProjectSlugs?.includes(project.slug));
+const relatedLinks = article.relatedLinks ?? [];
 ---
 <BaseLayout
   title={meta.title}
@@ -74,6 +75,9 @@ const relatedProjects = projects.filter((project) => article.relatedProjectSlugs
       <h2>Continue exploring</h2>
       {relatedProjects.map((project) => (
         <p><a href={`/projects/${project.slug}`}>See project: {project.title}</a></p>
+      ))}
+      {relatedLinks.map((link) => (
+        <p><a href={link.href}>{link.label}</a></p>
       ))}
       <p><a href="/projects">See all project case studies</a></p>
       <p><a href="/contact">Contact for implementation support</a></p>

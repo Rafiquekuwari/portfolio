@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FAQ from '../../components/FAQ.astro';
+import { buildMeta } from '../../utils/seo';
+import { breadcrumbSchema, faqSchema, localBusinessSchema, localServiceSchema, personSchema, webPageSchema } from '../../utils/schema';
+
+const meta = buildMeta({
+  title: 'AI Chatbot Developer in Bhiwandi | Mohammed Rafique Kuwari',
+  description:
+    'AI chatbot developer in Bhiwandi for support workflows, internal assistants, and business knowledge tools. Mohammed Rafique Kuwari builds usable chatbot systems grounded in real workflows.',
+  pathname: '/bhiwandi/ai-chatbot-developer',
+  keywords: [
+    'AI chatbot developer in Bhiwandi',
+    'RAG chatbot developer in Bhiwandi',
+    'AI automation for businesses in Bhiwandi'
+  ]
+});
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'AI Chatbot Developer in Bhiwandi', href: '/bhiwandi/ai-chatbot-developer' }
+];
+
+const localFaqs = [
+  {
+    question: 'What does an AI chatbot developer in Bhiwandi build?',
+    answer:
+      'An AI chatbot developer in Bhiwandi builds chat systems for customer support, internal assistance, knowledge access, and workflow guidance, often combining LLMs with business rules and retrieval.'
+  },
+  {
+    question: 'When should a business use an AI chatbot instead of a simple FAQ?',
+    answer:
+      'A business should use an AI chatbot when questions vary, knowledge changes often, or the team needs more than static answers, such as guided responses, search, or task assistance.'
+  },
+  {
+    question: 'Can AI chatbots be connected to internal documents and SOPs?',
+    answer:
+      'Yes. AI chatbots can be connected to internal documents and SOPs using retrieval systems so answers stay aligned with trusted business content.'
+  }
+];
+
+const service = localServiceSchema({
+  name: 'AI Chatbot Development in Bhiwandi',
+  path: '/bhiwandi/ai-chatbot-developer',
+  description:
+    'AI chatbot development in Bhiwandi for support teams, internal assistants, and retrieval-backed business knowledge systems.',
+  serviceType: 'AI Chatbot Development',
+  keywords: ['AI chatbot developer in Bhiwandi', 'RAG chatbot developer in Bhiwandi']
+});
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  keywords={meta.keywords}
+  schema={[
+    personSchema,
+    localBusinessSchema,
+    service,
+    webPageSchema({
+      name: 'AI Chatbot Developer in Bhiwandi',
+      path: '/bhiwandi/ai-chatbot-developer',
+      description: meta.description,
+      keywords: meta.keywords
+    }),
+    breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href }))),
+    faqSchema(localFaqs)
+  ]}
+>
+  <Breadcrumbs crumbs={crumbs} />
+  <section class="section" style="margin-top: 1rem;">
+    <div class="section-header">
+      <p class="kicker">Bhiwandi Service Page</p>
+      <h1>AI chatbot developer in Bhiwandi</h1>
+    </div>
+    <article class="card reveal">
+      <p>
+        I work as an AI chatbot developer in Bhiwandi for businesses that need customer-facing or internal assistants tied to real
+        business workflows. That can include support chat, knowledge search, guided responses, and retrieval-backed assistants that
+        use trusted content instead of generic model output.
+      </p>
+      <p style="margin-top: 0.9rem;">
+        The right chatbot depends on the problem. Some businesses need a simple workflow assistant, while others need a
+        retrieval-backed system closer to a <a href="/bhiwandi/rag-systems">RAG chatbot developer in Bhiwandi</a> use case.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="kicker">Service</p>
+      <h2>What this service covers</h2>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <h3>Support chatbots</h3>
+        <p>Answer repeated support questions, guide users through common flows, and reduce manual response load.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Internal assistants</h3>
+        <p>Help teams search SOPs, operational notes, and business documentation through a usable chat interface.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Workflow-aware chat systems</h3>
+        <p>Combine model output with routing logic, validation, and business actions when the chatbot is part of a real process.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="kicker">Who This Is For</p>
+      <h2>Teams that benefit most</h2>
+    </div>
+    <article class="card reveal">
+      <p>
+        This is useful for SaaS teams, support teams, operations teams, and businesses in Bhiwandi that spend too much time on
+        repeated questions, fragmented documentation, or manual response handling.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card reveal">
+      <h2>Continue exploring</h2>
+      <p><a href="/bhiwandi/rag-systems">RAG chatbot developer in Bhiwandi</a></p>
+      <p><a href="/bhiwandi/workflow-automation-developer">Workflow automation developer in Bhiwandi</a></p>
+      <p><a href="/projects/saas-rag-chatbot">SaaS RAG chatbot project</a></p>
+      <p><a href="/about">About Mohammed Rafique Kuwari</a></p>
+      <p><a href="/contact">Contact Mohammed Rafique Kuwari</a></p>
+    </article>
+  </section>
+
+  <FAQ faqs={localFaqs} heading="Answers to common AI chatbot questions in Bhiwandi" />
+</BaseLayout>
