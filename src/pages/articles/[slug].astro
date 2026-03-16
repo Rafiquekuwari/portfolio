@@ -18,7 +18,7 @@ const { article } = Astro.props;
 
 const meta = buildMeta({
   title: `${article.title} | Mohammad Rafique Kuwari`,
-  description: article.description,
+  description: `${article.title} by Mohammad Rafique Kuwari. ${article.description}`,
   pathname: `/articles/${article.slug}`,
   type: 'article',
   keywords: article.tags

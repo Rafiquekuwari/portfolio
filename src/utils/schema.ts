@@ -9,7 +9,7 @@ export const personSchema = {
   '@id': `${siteConfig.siteUrl}#person`,
   name: siteConfig.name,
   jobTitle: siteConfig.title,
-  description: siteConfig.description,
+  description: 'AI Engineer, Automation Expert, and AI Automation consultant focused on RAG systems and production workflow automation.',
   url: siteConfig.siteUrl,
   address: {
     '@type': 'PostalAddress',
@@ -17,7 +17,7 @@ export const personSchema = {
     addressLocality: siteConfig.locality,
     addressRegion: siteConfig.region,
     postalCode: siteConfig.postalCode,
-    addressCountry: siteConfig.countryCode
+    addressCountry: siteConfig.country
   },
   homeLocation: {
     '@type': 'Place',
@@ -86,12 +86,41 @@ export const serviceSchema = {
     addressLocality: siteConfig.locality,
     addressRegion: siteConfig.region,
     postalCode: siteConfig.postalCode,
-    addressCountry: siteConfig.countryCode
+    addressCountry: siteConfig.country
   },
-  areaServed: {
-    '@type': 'Country',
-    name: 'India'
-  }
+  areaServed: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`
+};
+
+export const professionalServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${siteConfig.siteUrl}#professional-service`,
+  name: `${siteConfig.name} AI Automation Services`,
+  description:
+    'AI Engineer and Automation Expert delivering AI Automation, RAG systems, PDF extraction pipelines, and workflow automation services.',
+  url: siteConfig.siteUrl,
+  keywords: ['AI Engineer', 'Automation Expert', 'AI Automation'],
+  provider: {
+    '@type': 'Person',
+    '@id': `${siteConfig.siteUrl}#person`
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteConfig.streetAddress,
+    addressLocality: siteConfig.locality,
+    addressRegion: siteConfig.region,
+    postalCode: siteConfig.postalCode,
+    addressCountry: siteConfig.country
+  },
+  areaServed: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`,
+  serviceType: [
+    'AI Automation',
+    'AI Engineer',
+    'Automation Expert',
+    'RAG chatbot development',
+    'PDF extraction systems',
+    'LLM workflow automation'
+  ]
 };
 
 export const breadcrumbSchema = (items: { name: string; path: string }[]) => ({

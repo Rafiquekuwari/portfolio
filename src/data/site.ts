@@ -42,6 +42,9 @@ export const siteConfig = {
     'AI developer in India'
   ],
   knowsAbout: [
+    'AI Engineer',
+    'Automation Expert',
+    'AI Automation',
     'AI automation systems',
     'PDF extraction pipelines',
     'Document intelligence',
