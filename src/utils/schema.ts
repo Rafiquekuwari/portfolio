@@ -118,35 +118,48 @@ export const serviceSchema = {
 
 export const professionalServiceSchema = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  '@id': `${siteConfig.siteUrl}#professional-service`,
-  name: `${siteConfig.name} AI Automation Services`,
-  description:
-    'AI Engineer and Automation Expert delivering AI Automation, RAG systems, PDF extraction pipelines, and workflow automation services.',
-  url: siteConfig.siteUrl,
-  keywords: ['AI Automation', 'RAG systems', 'AI Engineer', 'Automation Expert'],
-  serviceType: {
-    '@type': 'Service',
-    name: 'AI Automation and RAG Systems',
-    description: 'AI-driven solutions and RAG chatbots for businesses in Bhiwandi and Maharashtra.'
-  },
-  provider: {
-    '@type': 'Person',
-    name: siteConfig.name,
-    jobTitle: siteConfig.title,
-    url: `${siteConfig.siteUrl}/`,
-    sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
-    description: 'AI Automation & RAG Engineer specializing in workflow automation, AI-driven solutions, and chatbot development.'
-  },
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: siteConfig.streetAddress,
-    addressLocality: siteConfig.locality,
-    addressRegion: siteConfig.region,
-    postalCode: siteConfig.postalCode,
-    addressCountry: siteConfig.country
-  },
-  areaServed: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${siteConfig.siteUrl}#person`,
+      name: siteConfig.name,
+      jobTitle: siteConfig.title,
+      url: siteConfig.siteUrl,
+      sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
+      description:
+        'AI Automation & RAG Engineer specializing in workflow automation, AI-driven solutions, and chatbot development.'
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${siteConfig.siteUrl}#professional-service`,
+      name: `${siteConfig.name} AI Automation Services`,
+      description:
+        'AI Engineer and Automation Expert delivering AI Automation, RAG systems, PDF extraction pipelines, and workflow automation services.',
+      url: siteConfig.siteUrl,
+      keywords: ['AI Automation', 'RAG systems', 'AI Engineer', 'Automation Expert'],
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: siteConfig.streetAddress,
+        addressLocality: siteConfig.locality,
+        addressRegion: siteConfig.region,
+        postalCode: siteConfig.postalCode,
+        addressCountry: siteConfig.country
+      },
+      areaServed: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`,
+      availableService: [
+        {
+          '@type': 'Service',
+          name: 'AI Automation',
+          description: 'AI-driven automation systems for document-heavy and workflow-heavy business operations.'
+        },
+        {
+          '@type': 'Service',
+          name: 'RAG Systems',
+          description: 'Retrieval-augmented generation systems and chatbots grounded in trusted business knowledge.'
+        }
+      ]
+    }
+  ]
 };
 
 export const localServiceSchema = ({
