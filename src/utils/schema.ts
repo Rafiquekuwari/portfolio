@@ -146,7 +146,7 @@ export const professionalServiceSchema = {
         addressCountry: siteConfig.country
       },
       areaServed: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`,
-      availableService: [
+      offers: [
         {
           '@type': 'Service',
           name: 'AI Automation',
