@@ -48,7 +48,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Manrope', 'Manrope Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Manrope', 'Manrope Fallback', Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: radial-gradient(circle at top right, rgba(18, 79, 162, 0.08), transparent 50%), var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -95,6 +95,7 @@ img {
   display: flex;
   gap: 0.9rem;
   flex-wrap: wrap;
+  min-height: 60px;
 }
 
 .nav a {
@@ -176,6 +177,8 @@ p {
   margin-top: 1rem;
   color: var(--muted);
   max-width: 62ch;
+  min-height: 50px;
+  line-height: 1.4;
 }
 
 .location {
@@ -250,6 +253,7 @@ p {
 
 .reveal {
   animation: rise 0.55s ease both;
+  will-change: transform;
 }
 
 @keyframes rise {
