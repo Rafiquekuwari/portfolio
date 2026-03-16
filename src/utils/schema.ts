@@ -146,18 +146,28 @@ export const professionalServiceSchema = {
         addressCountry: siteConfig.country
       },
       areaServed: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`,
-      offers: [
-        {
-          '@type': 'Service',
-          name: 'AI Automation',
-          description: 'AI-driven automation systems for document-heavy and workflow-heavy business operations.'
-        },
-        {
-          '@type': 'Service',
-          name: 'RAG Systems',
-          description: 'Retrieval-augmented generation systems and chatbots grounded in trusted business knowledge.'
-        }
-      ]
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'AI Automation and RAG Services',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'AI Automation',
+              description: 'AI-driven automation systems for document-heavy and workflow-heavy business operations.'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'RAG Systems',
+              description: 'Retrieval-augmented generation systems and chatbots grounded in trusted business knowledge.'
+            }
+          }
+        ]
+      }
     }
   ]
 };
