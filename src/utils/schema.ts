@@ -124,10 +124,18 @@ export const professionalServiceSchema = {
   description:
     'AI Engineer and Automation Expert delivering AI Automation, RAG systems, PDF extraction pipelines, and workflow automation services.',
   url: siteConfig.siteUrl,
-  keywords: ['AI Engineer', 'Automation Expert', 'AI Automation'],
+  keywords: ['AI Automation', 'RAG systems', 'AI Engineer', 'Automation Expert'],
+  serviceType: {
+    '@type': 'Service',
+    name: 'AI Automation and RAG Systems'
+  },
   provider: {
     '@type': 'Person',
-    '@id': `${siteConfig.siteUrl}#person`
+    name: siteConfig.name,
+    jobTitle: siteConfig.title,
+    url: siteConfig.siteUrl,
+    sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
+    description: 'AI Automation & RAG Engineer specializing in workflow automation, AI-driven solutions, and chatbot development.'
   },
   address: {
     '@type': 'PostalAddress',
@@ -137,15 +145,7 @@ export const professionalServiceSchema = {
     postalCode: siteConfig.postalCode,
     addressCountry: siteConfig.country
   },
-  areaServed: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`,
-  serviceType: [
-    'AI Automation',
-    'AI Engineer',
-    'Automation Expert',
-    'RAG chatbot development',
-    'PDF extraction systems',
-    'LLM workflow automation'
-  ]
+  areaServed: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`
 };
 
 export const localServiceSchema = ({
