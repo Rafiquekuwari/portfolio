@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FAQ from '../../components/FAQ.astro';
+import { buildMeta } from '../../utils/seo';
+import { breadcrumbSchema, faqSchema, localBusinessSchema, localServiceSchema, personSchema } from '../../utils/schema';
+
+const meta = buildMeta({
+  title: 'AI Automation in Bhiwandi | Mohammed Rafique Kuwari',
+  description:
+    'AI automation in Bhiwandi by Mohammed Rafique Kuwari, an AI Automation & RAG Engineer building document workflows, PDF extraction systems, and LLM-powered business automation.',
+  pathname: '/bhiwandi/ai-automation',
+  keywords: [
+    'AI automation in Bhiwandi',
+    'AI engineer in Bhiwandi',
+    'workflow automation in Bhiwandi',
+    'document automation in Bhiwandi'
+  ]
+});
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'AI Automation in Bhiwandi', href: '/bhiwandi/ai-automation' }
+];
+
+const localFaqs = [
+  {
+    question: 'What does AI automation in Bhiwandi look like for real businesses?',
+    answer:
+      'AI automation in Bhiwandi usually means replacing repetitive document handling, status checks, data entry, and routing tasks with systems that extract data, validate it, and move it into existing workflows.'
+  },
+  {
+    question: 'Who should hire an AI engineer in Bhiwandi?',
+    answer:
+      'Teams in logistics, healthcare operations, SaaS, and document-heavy back-office environments benefit most when they need practical automation tied to measurable workflow outcomes.'
+  },
+  {
+    question: 'Can AI automation in Bhiwandi help with PDFs and unstructured documents?',
+    answer:
+      'Yes. AI automation can classify documents, extract structured fields, validate outputs, and turn PDFs into usable JSON or system-ready records.'
+  }
+];
+
+const service = localServiceSchema({
+  name: 'AI Automation in Bhiwandi',
+  path: '/bhiwandi/ai-automation',
+  description:
+    'AI automation engineering in Bhiwandi for document workflows, repetitive operations, PDF extraction, and LLM-powered workflow automation.',
+  serviceType: 'AI Automation Development',
+  keywords: ['AI automation in Bhiwandi', 'AI engineer in Bhiwandi', 'LLM workflow automation in Bhiwandi']
+});
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  keywords={meta.keywords}
+  schema={[personSchema, localBusinessSchema, service, breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href }))), faqSchema(localFaqs)]}
+>
+  <Breadcrumbs crumbs={crumbs} />
+
+  <section class="section" style="margin-top: 1rem;">
+    <div class="section-header">
+      <p class="kicker">Bhiwandi Service Page</p>
+      <h1>AI automation in Bhiwandi for document workflows and operations</h1>
+    </div>
+    <article class="card reveal">
+      <p>
+        I build AI automation in Bhiwandi for businesses that need to reduce manual work, improve document handling, and make
+        repetitive operational workflows easier to manage. The focus is not generic automation. It is production-oriented systems
+        that connect extraction, validation, routing, and human review where needed.
+      </p>
+      <p style="margin-top: 0.9rem;">
+        As an AI engineer in Bhiwandi, I work on problems such as PDF intake, structured data extraction, approval routing,
+        workflow orchestration, and LLM-assisted task handling. The goal is to move teams away from copy-paste work and toward
+        systems that produce usable outputs and clear operational signals.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="kicker">Where It Fits</p>
+      <h2>Common use cases for AI automation in Bhiwandi</h2>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <h3>Document-heavy back-office processes</h3>
+        <p>Automate intake, extraction, validation, and handoff for invoices, forms, reports, and operational documents.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Workflow routing and triage</h3>
+        <p>Route records, requests, and exceptions to the right queue with business rules, model outputs, and auditability.</p>
+      </article>
+      <article class="card reveal">
+        <h3>LLM workflow automation</h3>
+        <p>Use language models for classification, summarization, drafting, and support tasks while keeping outputs structured.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="kicker">Approach</p>
+      <h2>How I build AI automation systems</h2>
+    </div>
+    <article class="card reveal">
+      <p>
+        The work usually starts with process mapping and output definition. From there, I design the extraction or orchestration
+        layer, define validation rules, and build integrations that make the automation useful inside the actual business
+        workflow.
+      </p>
+      <p style="margin-top: 0.9rem;">
+        If your process depends on PDFs or scanned records, that usually overlaps with <a href="/projects/pdf-extraction-automation">PDF extraction automation</a>.
+        If your workflow depends on internal knowledge retrieval, it often connects naturally to <a href="/bhiwandi/rag-systems">RAG systems in Bhiwandi</a>.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card reveal">
+      <h2>Related pages</h2>
+      <p><a href="/bhiwandi/rag-systems">RAG systems in Bhiwandi</a></p>
+      <p><a href="/projects">AI automation and RAG projects</a></p>
+      <p><a href="/contact">Contact Mohammed Rafique Kuwari</a></p>
+    </article>
+  </section>
+
+  <FAQ faqs={localFaqs} />
+</BaseLayout>

@@ -31,9 +31,13 @@ export const siteConfig = {
   ],
   geoKeywords: [
     'AI automation engineer',
+    'AI automation in Bhiwandi',
+    'AI engineer in Bhiwandi',
     'PDF extraction automation',
     'PDF to structured JSON pipelines',
     'RAG chatbot developer for SaaS',
+    'RAG systems in Bhiwandi',
+    'RAG chatbots in Bhiwandi',
     'LLM workflow automation',
     'healthcare AI systems',
     'routing optimization AI',

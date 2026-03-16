@@ -1,10 +1,20 @@
 ---
-import { faqs } from '../data/site';
+import { faqs as defaultFaqs } from '../data/site';
+
+type Faq = {
+  question: string;
+  answer: string;
+};
+
+const { faqs = defaultFaqs, heading = 'Answers to common AI automation and RAG questions' } = Astro.props as {
+  faqs?: Faq[];
+  heading?: string;
+};
 ---
 <section class="section" id="faq">
   <div class="section-header">
     <p class="kicker">FAQ</p>
-    <h2>Answers to common AI automation and RAG questions</h2>
+    <h2>{heading}</h2>
   </div>
   <div class="grid-2">
     {faqs.map((item) => (

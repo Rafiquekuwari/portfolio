@@ -7,7 +7,7 @@ import { faqs, problemsSolved, services, siteConfig } from '../data/site';
 import { projects } from '../data/projects';
 import { articles } from '../data/articles';
 import { buildMeta } from '../utils/seo';
-import { faqSchema, personSchema, professionalServiceSchema, serviceSchema, websiteSchema } from '../utils/schema';
+import { faqSchema, localBusinessSchema, personSchema, professionalServiceSchema, serviceSchema, websiteSchema } from '../utils/schema';
 
 const meta = buildMeta({
   title: 'Mohammed Rafique Kuwari | AI Automation & RAG Engineer Portfolio',
@@ -27,7 +27,7 @@ const meta = buildMeta({
   description={meta.description}
   canonical={meta.canonical}
   keywords={meta.keywords}
-  schema={[personSchema, websiteSchema, serviceSchema, professionalServiceSchema, faqSchema(faqs)]}
+  schema={[personSchema, websiteSchema, localBusinessSchema, serviceSchema, professionalServiceSchema, faqSchema(faqs)]}
 >
   <section class="hero">
     <article class="card hero-copy reveal">
@@ -93,6 +93,31 @@ const meta = buildMeta({
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>
     <p style="margin-top: 1rem;"><a href="/projects">See all project details and architecture highlights</a></p>
+  </section>
+
+  <section class="section" id="bhiwandi-services">
+    <div class="section-header">
+      <p class="kicker">In Bhiwandi</p>
+      <h2>Location-specific AI automation and RAG pages for Bhiwandi businesses</h2>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <h3>AI automation in Bhiwandi</h3>
+        <p>
+          A focused page on how I approach AI automation in Bhiwandi for document-heavy, operations-heavy, and workflow-heavy
+          business processes.
+        </p>
+        <p style="margin-top: 0.9rem;"><a href="/bhiwandi/ai-automation">Explore AI automation in Bhiwandi</a></p>
+      </article>
+      <article class="card reveal">
+        <h3>RAG systems in Bhiwandi</h3>
+        <p>
+          A focused page on building RAG chatbots in Bhiwandi for SaaS knowledge bases, internal documentation, and support
+          workflows.
+        </p>
+        <p style="margin-top: 0.9rem;"><a href="/bhiwandi/rag-systems">Explore RAG systems in Bhiwandi</a></p>
+      </article>
+    </div>
   </section>
 
   <section class="section" id="articles">

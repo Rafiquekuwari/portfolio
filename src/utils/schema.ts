@@ -42,6 +42,31 @@ export const websiteSchema = {
   }
 };
 
+export const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${siteConfig.siteUrl}#local-business`,
+  name: siteConfig.name,
+  description:
+    'AI automation and RAG engineering services in Bhiwandi, Maharashtra, including PDF extraction pipelines, SaaS knowledge assistants, and LLM workflow automation.',
+  url: siteConfig.siteUrl,
+  image: absoluteUrl(siteConfig.socialImage),
+  sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteConfig.streetAddress,
+    addressLocality: siteConfig.locality,
+    addressRegion: siteConfig.region,
+    postalCode: siteConfig.postalCode,
+    addressCountry: siteConfig.country
+  },
+  areaServed: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`,
+  founder: {
+    '@type': 'Person',
+    '@id': `${siteConfig.siteUrl}#person`
+  }
+};
+
 export const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -122,6 +147,44 @@ export const professionalServiceSchema = {
     'LLM workflow automation'
   ]
 };
+
+export const localServiceSchema = ({
+  name,
+  path,
+  description,
+  serviceType,
+  keywords = []
+}: {
+  name: string;
+  path: string;
+  description: string;
+  serviceType: string;
+  keywords?: string[];
+}) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${absoluteUrl(path)}#service`,
+  name,
+  description,
+  url: absoluteUrl(path),
+  serviceType,
+  keywords,
+  areaServed: {
+    '@type': 'Place',
+    name: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`
+  },
+  provider: {
+    '@type': 'Organization',
+    '@id': `${siteConfig.siteUrl}#local-business`
+  },
+  audience: {
+    '@type': 'BusinessAudience',
+    geographicArea: {
+      '@type': 'Place',
+      name: `${siteConfig.locality}, ${siteConfig.region}, ${siteConfig.country}`
+    }
+  }
+});
 
 export const breadcrumbSchema = (items: { name: string; path: string }[]) => ({
   '@context': 'https://schema.org',

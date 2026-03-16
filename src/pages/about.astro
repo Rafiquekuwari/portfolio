@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { siteConfig } from '../data/site';
 import { buildMeta } from '../utils/seo';
-import { breadcrumbSchema, personSchema, professionalServiceSchema, serviceSchema } from '../utils/schema';
+import { breadcrumbSchema, localBusinessSchema, personSchema, professionalServiceSchema, serviceSchema } from '../utils/schema';
 
 const meta = buildMeta({
   title: 'About | Mohammed Rafique Kuwari | AI Automation & RAG Engineer',
@@ -23,7 +23,7 @@ const crumbs = [
   description={meta.description}
   canonical={meta.canonical}
   keywords={meta.keywords}
-  schema={[personSchema, serviceSchema, professionalServiceSchema, breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href })))]}
+  schema={[personSchema, localBusinessSchema, serviceSchema, professionalServiceSchema, breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href })))]}
 >
   <Breadcrumbs crumbs={crumbs} />
   <section class="section" style="margin-top: 1rem;">
@@ -79,6 +79,8 @@ const crumbs = [
       <h2>Explore more</h2>
       <p><a href="/projects">View projects with architecture details</a></p>
       <p><a href="/articles">Read implementation articles</a></p>
+      <p><a href="/bhiwandi/ai-automation">Read about AI automation in Bhiwandi</a></p>
+      <p><a href="/bhiwandi/rag-systems">Read about RAG systems in Bhiwandi</a></p>
       <p><a href="/contact">Contact for AI automation consulting</a></p>
     </article>
   </section>
