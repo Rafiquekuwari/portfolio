@@ -9,41 +9,49 @@
   from = "/about"
   to = "/about/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/about/"
   to = "/about/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/projects"
   to = "/projects/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/projects/"
   to = "/projects/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/articles"
   to = "/articles/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/articles/"
   to = "/articles/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/contact"
   to = "/contact/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/contact/"
   to = "/contact/index.html"
   status = 200
+  force = true
 
 [[headers]]
   for = "/fonts/*"

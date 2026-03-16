@@ -4,5 +4,5 @@ export default defineConfig({
   site: 'https://mohammedrk.netlify.app',
   output: 'static',
   compressHTML: true,
-  trailingSlash: 'never'
+  trailingSlash: 'ignore'
 });
