@@ -27,17 +27,16 @@ const pathname = Astro.url.pathname;
     root.setAttribute('data-theme', value);
     localStorage.setItem(key, value);
   };
-
-  const saved = localStorage.getItem(key);
-  if (saved) {
-    setTheme(saved);
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    setTheme('dark');
+  const attachThemeToggle = () => {
+    const button = document.querySelector('#theme-toggle');
+    button?.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+  };
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(attachThemeToggle);
+  } else {
+    window.setTimeout(attachThemeToggle, 0);
   }
-
-  const button = document.querySelector('#theme-toggle');
-  button?.addEventListener('click', () => {
-    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    setTheme(next);
-  });
 </script>

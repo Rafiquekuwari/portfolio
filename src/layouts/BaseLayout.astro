@@ -32,6 +32,14 @@ const { title, description, canonical, ogType = 'website', schema = [], noindex 
       type="font/woff2"
       crossorigin
     />
+    <script is:inline>
+      (() => {
+        const key = 'theme-pref';
+        const saved = localStorage.getItem(key);
+        const theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
     <HeadMeta
       title={title}
       description={description}
