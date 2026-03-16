@@ -1,4 +1,4 @@
-# Mohammad Rafique Kuwari Portfolio (GEO + SEO Ready)
+# Mohammed Rafique Kuwari Portfolio (GEO + SEO Ready)
 
 Production-ready personal portfolio built with Astro + TypeScript, optimized for fast static deployment on Netlify and strong Generative Engine Optimization (GEO).
 

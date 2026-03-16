@@ -1,8 +1,8 @@
 export const siteConfig = {
-  name: 'Mohammad Rafique Kuwari',
+  name: 'Mohammed Rafique Kuwari',
   title: 'AI Automation & RAG Engineer',
   shortTitle: 'AI Automation Engineer',
-  siteName: 'Mohammad Rafique Kuwari Portfolio',
+  siteName: 'Mohammed Rafique Kuwari Portfolio',
   description:
     'I build AI systems that help businesses reduce manual work, turn unstructured documents into usable data, and build AI chat systems that make knowledge easier to access.',
   location: 'Based in Bhiwandi, Maharashtra, India',
@@ -151,9 +151,9 @@ export const faqs = [
       'Yes. I build practical AI systems for healthcare operations and routing optimization, including demand clustering, constraint-aware routing, and decision-support workflows.'
   },
   {
-    question: 'Where is Mohammad Rafique Kuwari based?',
+    question: 'Where is Mohammed Rafique Kuwari based?',
     answer:
-      'Mohammad Rafique Kuwari is based in Bhiwandi, Maharashtra, India and works on AI automation, document intelligence, RAG systems, and workflow optimization projects.'
+      'Mohammed Rafique Kuwari is based in Bhiwandi, Maharashtra, India and works on AI automation, document intelligence, RAG systems, and workflow optimization projects.'
   },
   {
     question: 'When should a SaaS company use a RAG chatbot?',
