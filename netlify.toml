@@ -5,6 +5,46 @@
 [build.environment]
   NODE_VERSION = "20"
 
+[[redirects]]
+  from = "/about"
+  to = "/about/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/about/"
+  to = "/about/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/projects"
+  to = "/projects/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/projects/"
+  to = "/projects/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/articles"
+  to = "/articles/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/articles/"
+  to = "/articles/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact/"
+  to = "/contact/index.html"
+  status = 200
+
 [[headers]]
   for = "/fonts/*"
   [headers.values]
