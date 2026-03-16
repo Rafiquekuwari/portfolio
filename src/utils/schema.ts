@@ -127,13 +127,14 @@ export const professionalServiceSchema = {
   keywords: ['AI Automation', 'RAG systems', 'AI Engineer', 'Automation Expert'],
   serviceType: {
     '@type': 'Service',
-    name: 'AI Automation and RAG Systems'
+    name: 'AI Automation and RAG Systems',
+    description: 'AI-driven solutions and RAG chatbots for businesses in Bhiwandi and Maharashtra.'
   },
   provider: {
     '@type': 'Person',
     name: siteConfig.name,
     jobTitle: siteConfig.title,
-    url: siteConfig.siteUrl,
+    url: `${siteConfig.siteUrl}/`,
     sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
     description: 'AI Automation & RAG Engineer specializing in workflow automation, AI-driven solutions, and chatbot development.'
   },
