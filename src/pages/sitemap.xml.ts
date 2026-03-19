@@ -9,6 +9,7 @@ const staticPages = [
   '/projects',
   '/articles',
   '/contact',
+  '/services/seo-geo-implementation',
   '/bhiwandi/ai-automation',
   '/bhiwandi/rag-systems',
   '/bhiwandi/ai-chatbot-developer',

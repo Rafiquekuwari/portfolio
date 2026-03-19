@@ -9,7 +9,8 @@ export const personSchema = {
   '@id': `${siteConfig.siteUrl}#person`,
   name: siteConfig.name,
   jobTitle: siteConfig.title,
-  description: 'AI Engineer, Automation Expert, and AI Automation consultant focused on RAG systems and production workflow automation.',
+  description:
+    'Implementation-focused practitioner working across AI automation, document intelligence, RAG systems, SEO foundations, local SEO, and GEO for AI-assisted search visibility.',
   url: siteConfig.siteUrl,
   address: {
     '@type': 'PostalAddress',
@@ -48,7 +49,7 @@ export const localBusinessSchema = {
   '@id': `${siteConfig.siteUrl}#local-business`,
   name: siteConfig.name,
   description:
-    'AI automation and RAG engineering services in Bhiwandi, Maharashtra, including PDF extraction pipelines, SaaS knowledge assistants, and LLM workflow automation.',
+    'AI automation, document automation, RAG systems, and SEO / GEO implementation services in Bhiwandi, Maharashtra for service businesses.',
   url: siteConfig.siteUrl,
   image: absoluteUrl(siteConfig.socialImage),
   sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
@@ -73,7 +74,7 @@ export const serviceSchema = {
   '@id': `${siteConfig.siteUrl}#service`,
   name: siteConfig.name,
   url: siteConfig.siteUrl,
-  description: 'AI Automation & RAG engineering services.',
+  description: 'AI automation, document systems, RAG chatbots, and SEO / GEO implementation services.',
   sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -85,6 +86,30 @@ export const serviceSchema = {
           '@type': 'Service',
           name: 'AI Automation Development',
           serviceType: 'AI Automation Development',
+          provider: {
+            '@type': 'Person',
+            name: siteConfig.name,
+            jobTitle: siteConfig.title,
+            description: siteConfig.description,
+            url: siteConfig.siteUrl,
+            sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: siteConfig.streetAddress,
+              addressLocality: siteConfig.locality,
+              addressRegion: siteConfig.region,
+              postalCode: siteConfig.postalCode,
+              addressCountry: siteConfig.countryCode
+            }
+          }
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'SEO and GEO Implementation',
+          serviceType: 'SEO and GEO Implementation',
           provider: {
             '@type': 'Person',
             name: siteConfig.name,
@@ -127,16 +152,16 @@ export const professionalServiceSchema = {
       url: siteConfig.siteUrl,
       sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.instagram],
       description:
-        'AI Automation & RAG Engineer specializing in workflow automation, AI-driven solutions, and chatbot development.'
+        'Implementation-focused practitioner specializing in AI automation, document workflows, RAG chatbots, SEO foundations, and GEO for AI-assisted search.'
     },
     {
       '@type': 'ProfessionalService',
       '@id': `${siteConfig.siteUrl}#professional-service`,
       name: `${siteConfig.name} AI Automation Services`,
       description:
-        'AI Engineer and Automation Expert delivering AI Automation, RAG systems, PDF extraction pipelines, and workflow automation services.',
+        'Implementation-focused services across AI automation, RAG systems, document workflows, SEO foundations, local SEO, and GEO improvements for AI-assisted search.',
       url: siteConfig.siteUrl,
-      keywords: ['AI Automation', 'RAG systems', 'AI Engineer', 'Automation Expert'],
+      keywords: ['AI Automation', 'RAG systems', 'Document automation', 'SEO', 'Local SEO', 'GEO'],
       address: {
         '@type': 'PostalAddress',
         streetAddress: siteConfig.streetAddress,
@@ -164,6 +189,30 @@ export const professionalServiceSchema = {
               '@type': 'Service',
               name: 'RAG Systems',
               description: 'Retrieval-augmented generation systems and chatbots grounded in trusted business knowledge.'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Document Automation',
+              description: 'Document workflow implementation that turns PDFs and unstructured inputs into usable structured data.'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'SEO and Local SEO',
+              description: 'Technical SEO, local SEO, indexing, metadata, and internal linking improvements for service businesses.'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'GEO and AI-search Visibility',
+              description: 'Implementation work that improves how a business is understood in AI-assisted search through schema, content structure, and discoverability improvements.'
             }
           }
         ]

@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FAQ from '../../components/FAQ.astro';
+import { buildMeta } from '../../utils/seo';
+import { breadcrumbSchema, faqSchema, localBusinessSchema, localServiceSchema, personSchema, webPageSchema } from '../../utils/schema';
+
+const meta = buildMeta({
+  title: 'SEO & GEO Implementation | Mohammed Rafique Kuwari',
+  description:
+    'Technical SEO, local SEO, and GEO implementation by Mohammed Rafique Kuwari. Improve crawlability, indexing, schema, internal linking, and AI-search visibility for service businesses.',
+  pathname: '/services/seo-geo-implementation',
+  keywords: ['SEO implementation', 'local SEO implementation', 'GEO implementation', 'AI-search visibility implementation']
+});
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'SEO & GEO Implementation', href: '/services/seo-geo-implementation' }
+];
+
+const localFaqs = [
+  {
+    question: 'What does SEO implementation mean in your context?',
+    answer:
+      'It means technical and structural work such as metadata, schema, crawlability, indexing fixes, internal linking, service page structure, and local search alignment rather than generic marketing promises.'
+  },
+  {
+    question: 'What does GEO mean in your context?',
+    answer:
+      'GEO means improving how a business is understood by AI-assisted search systems through structured data, clear service/entity associations, machine-readable page structure, and useful supporting content.'
+  },
+  {
+    question: 'Who is this service for?',
+    answer:
+      'It is best for service businesses that already have a site but need stronger technical foundations, local discoverability, and clearer visibility in Google and AI-assisted search.'
+  }
+];
+
+const service = localServiceSchema({
+  name: 'SEO and GEO Implementation',
+  path: '/services/seo-geo-implementation',
+  description:
+    'Implementation-focused SEO, local SEO, and GEO work covering metadata, schema, indexing, internal linking, local pages, and AI-search visibility improvements.',
+  serviceType: 'SEO and GEO Implementation',
+  keywords: ['SEO implementation', 'local SEO', 'GEO implementation', 'AI-search visibility']
+});
+---
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  keywords={meta.keywords}
+  schema={[
+    personSchema,
+    localBusinessSchema,
+    service,
+    webPageSchema({
+      name: 'SEO & GEO Implementation',
+      path: '/services/seo-geo-implementation',
+      description: meta.description,
+      keywords: meta.keywords
+    }),
+    breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.href }))),
+    faqSchema(localFaqs)
+  ]}
+>
+  <Breadcrumbs crumbs={crumbs} />
+  <section class="section" style="margin-top: 1rem;">
+    <div class="section-header">
+      <p class="kicker">Service</p>
+      <h1>SEO and GEO implementation</h1>
+    </div>
+    <article class="card reveal">
+      <p>
+        In my work, SEO implementation means the technical and structural changes that help a business become easier to crawl,
+        index, understand, and surface in search. GEO means doing the same for AI-assisted search by improving machine-readable
+        structure, entity clarity, content architecture, and discoverability.
+      </p>
+      <p style="margin-top: 0.9rem;">
+        This is not generic marketing work. It is implementation-focused work for service businesses that need better local search
+        foundations, clearer internal linking, stronger schema, and a site structure that explains what the business does in a way
+        search systems can reliably interpret.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="kicker">What I Implement</p>
+      <h2>Technical work across SEO, local SEO, and GEO</h2>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <h3>Metadata and schema</h3>
+        <p>Implement title tags, descriptions, structured data, and entity associations that improve machine readability.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Indexing and crawlability fixes</h3>
+        <p>Clean up sitemap coverage, robots handling, canonicals, heading structure, and internal links so important pages are easier to reach and understand.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Local service architecture</h3>
+        <p>Create or improve local service pages, location-specific content, and Google Business Profile alignment to support local search discoverability.</p>
+      </article>
+      <article class="card reveal">
+        <h3>AI-search visibility improvements</h3>
+        <p>Improve how the site is interpreted by AI-assisted search through structured content, clear expertise signals, and supporting content clusters.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="kicker">Problems Solved</p>
+      <h2>When this service is useful</h2>
+    </div>
+    <article class="card reveal">
+      <p>
+        This work is useful when a service business has a technically acceptable site but weak discoverability, unclear service
+        structure, inconsistent local signals, or poor alignment between what the business does and what search systems understand.
+      </p>
+      <p style="margin-top: 0.9rem;">
+        It also fits businesses that need operational improvements at the same time, because visibility problems often overlap
+        with content, document, and workflow problems. That is why this work sits naturally alongside <a href="/bhiwandi/workflow-automation-developer">workflow automation</a>,
+        <a href="/bhiwandi/document-workflow-automation"> document automation</a>, and <a href="/bhiwandi/rag-systems">RAG chatbots</a>.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card reveal">
+      <h2>Continue exploring</h2>
+      <p><a href="/">Home</a></p>
+      <p><a href="/about">About Mohammed Rafique Kuwari</a></p>
+      <p><a href="/contact">Contact for SEO and GEO implementation</a></p>
+      <p><a href="/articles/ai-automation-for-businesses-in-bhiwandi">AI automation for businesses in Bhiwandi</a></p>
+      <p><a href="/articles/rag-chatbot-use-cases-for-businesses-in-bhiwandi">RAG chatbot use cases for businesses in Bhiwandi</a></p>
+    </article>
+  </section>
+
+  <FAQ faqs={localFaqs} heading="Answers to common SEO and GEO implementation questions" />
+</BaseLayout>

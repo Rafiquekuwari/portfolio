@@ -10,16 +10,17 @@ import { buildMeta } from '../utils/seo';
 import { faqSchema, localBusinessSchema, professionalServiceSchema, serviceSchema, websiteSchema } from '../utils/schema';
 
 const meta = buildMeta({
-  title: 'Mohammed Rafique Kuwari | AI Automation & RAG Engineer Portfolio',
+  title: 'Mohammed Rafique Kuwari | AI Automation, SEO & GEO Implementation',
   description:
-    'Portfolio of Mohammed Rafique Kuwari, AI Automation & RAG Engineer in Bhiwandi, Maharashtra, India. Explore AI automation, PDF extraction pipelines, RAG chatbot development, and LLM workflow systems.',
+    'Portfolio of Mohammed Rafique Kuwari in Bhiwandi, Maharashtra, India. Explore AI automation, workflow systems, document automation, RAG chatbots, and SEO / GEO implementation.',
   pathname: '/',
   keywords: [
-    'AI Automation & RAG Engineer',
+    'AI automation and SEO implementation',
     'AI automation engineer in Bhiwandi',
     'RAG chatbot developer in Bhiwandi',
     'Workflow automation developer in Bhiwandi',
-    'Document workflow automation in Bhiwandi'
+    'Document workflow automation in Bhiwandi',
+    'SEO and GEO implementation'
   ]
 });
 ---
@@ -32,10 +33,13 @@ const meta = buildMeta({
 >
   <section class="hero">
     <article class="card hero-copy reveal">
-      <p class="kicker">AI Automation &amp; RAG Engineer in Bhiwandi, Maharashtra, India</p>
+      <p class="kicker">AI automation, SEO &amp; GEO implementation in Bhiwandi, Maharashtra, India</p>
       <h1>{siteConfig.name}</h1>
       <h2 style="margin-top: 0.55rem;">{siteConfig.title}</h2>
-      <p>{siteConfig.description}</p>
+      <p>
+        I help businesses reduce manual work, automate workflows, improve Google and AI-search visibility, turn documents into
+        usable structured data, and build RAG chat systems grounded in internal knowledge.
+      </p>
       <p class="location">{siteConfig.location}</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="/projects">View Projects</a>
@@ -47,11 +51,11 @@ const meta = buildMeta({
       <h2>How I work</h2>
       <ul class="list">
         <li>Define business bottlenecks and measurable targets.</li>
-        <li>Design robust data and retrieval architecture first.</li>
-        <li>Implement AI pipelines with validation and monitoring.</li>
+        <li>Design robust data, retrieval, and search architecture first.</li>
+        <li>Implement AI systems, SEO foundations, and visibility fixes with validation.</li>
         <li>Ship practical systems teams can adopt in daily workflows.</li>
       </ul>
-      <p style="margin-top: 1rem;"><a href="/about">Read more about my methodology</a></p>
+      <p style="margin-top: 1rem;"><a href="/services/seo-geo-implementation">See how I implement SEO and GEO foundations</a></p>
     </aside>
   </section>
 
@@ -65,6 +69,7 @@ const meta = buildMeta({
         <article class="card reveal">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
+          {service.href && <p style="margin-top: 0.9rem;"><a href={service.href}>Learn more</a></p>}
         </article>
       ))}
     </div>
@@ -130,6 +135,13 @@ const meta = buildMeta({
         </p>
         <p style="margin-top: 0.9rem;"><a href="/bhiwandi/document-workflow-automation">Explore document workflow automation in Bhiwandi</a></p>
       </article>
+      <article class="card reveal">
+        <h3>SEO and GEO implementation</h3>
+        <p>
+          A focused page on technical SEO, local SEO, schema, indexing, and AI-search visibility improvements for service businesses.
+        </p>
+        <p style="margin-top: 0.9rem;"><a href="/services/seo-geo-implementation">Explore SEO and GEO implementation</a></p>
+      </article>
     </div>
   </section>
 
@@ -151,15 +163,16 @@ const meta = buildMeta({
     </div>
     <article class="card reveal">
       <p>
-        I am an AI Automation & RAG Engineer who builds reliable systems for document intelligence, SaaS knowledge assistants,
-        and LLM workflow automation. My focus is on machine-readable architectures that connect models with operational data,
-        so teams can replace repetitive tasks with structured and traceable AI workflows.
+        I build implementation-focused systems across AI automation, document intelligence, RAG chatbots, and technical search
+        foundations. That includes workflows that reduce manual work, document pipelines that produce usable data, and SEO / GEO
+        improvements that make service businesses easier to discover in Google and AI-assisted search.
       </p>
       <p style="margin-top: 0.9rem;">
-        Based in Bhiwandi, Maharashtra, India, I work on AI automation projects that need clear data flow, robust retrieval,
-        and practical integration into existing business systems.
+        Based in Bhiwandi, Maharashtra, India, I work on systems that need clear data flow, strong retrieval, practical
+        implementation, and clean machine-readable structure from metadata through schema and internal linking.
       </p>
       <p style="margin-top: 0.9rem;"><a href="/about">Read my full background and technical approach</a></p>
+      <p><a href="/services/seo-geo-implementation">Read about SEO and GEO implementation</a></p>
     </article>
   </section>
 
@@ -168,7 +181,7 @@ const meta = buildMeta({
   <section class="section" id="contact">
     <div class="section-header">
       <p class="kicker">Contact</p>
-      <h2>Let’s discuss your AI automation or RAG project</h2>
+      <h2>Let’s discuss your automation, document, or visibility problem</h2>
     </div>
     <article class="card reveal">
       <p>Email: <a href={siteConfig.email}>{siteConfig.emailLabel}</a></p>
@@ -176,6 +189,7 @@ const meta = buildMeta({
       <p>LinkedIn: <a href={siteConfig.linkedin}>{siteConfig.linkedinLabel}</a></p>
       <p>Instagram: <a href={siteConfig.instagram}>{siteConfig.instagramLabel}</a></p>
       <p>Portfolio: <a href={siteConfig.siteUrl}>{siteConfig.siteUrl}</a></p>
+      <p><a href="/services/seo-geo-implementation">SEO and GEO implementation</a></p>
     </article>
   </section>
 </BaseLayout>

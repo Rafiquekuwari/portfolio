@@ -1,10 +1,10 @@
 export const siteConfig = {
   name: 'Mohammed Rafique Kuwari',
-  title: 'AI Automation & RAG Engineer',
-  shortTitle: 'AI Automation Engineer',
+  title: 'AI Automation, SEO & GEO Implementer',
+  shortTitle: 'AI Automation & SEO Implementer',
   siteName: 'Mohammed Rafique Kuwari Portfolio',
   description:
-    'I build AI systems that help businesses reduce manual work, turn unstructured documents into usable data, and build AI chat systems that make knowledge easier to access.',
+    'I help businesses solve workflow, document, and visibility problems using AI automation, SEO, and GEO. I automate repetitive processes, turn unstructured documents into usable data, build RAG chat systems from internal knowledge, and implement technical search foundations for Google and AI-assisted search.',
   location: 'Based in Bhiwandi, Maharashtra, India',
   streetAddress: '2nd Nizampur',
   locality: 'Bhiwandi',
@@ -33,6 +33,10 @@ export const siteConfig = {
     'AI automation engineer',
     'AI automation in Bhiwandi',
     'AI engineer in Bhiwandi',
+    'SEO implementation',
+    'local SEO implementation',
+    'GEO implementation',
+    'AI-search visibility implementation',
     'PDF extraction automation',
     'PDF to structured JSON pipelines',
     'RAG chatbot developer for SaaS',
@@ -50,6 +54,11 @@ export const siteConfig = {
     'Automation Expert',
     'AI Automation',
     'AI automation systems',
+    'SEO implementation',
+    'Technical SEO foundations',
+    'Local SEO',
+    'GEO implementation',
+    'AI-search visibility',
     'PDF extraction pipelines',
     'Document intelligence',
     'RAG chatbot development',
@@ -65,33 +74,39 @@ export const siteConfig = {
 export type Service = {
   title: string;
   description: string;
+  href?: string;
 };
 
 export const services: Service[] = [
   {
-    title: 'AI Automation Development',
+    title: 'AI Automation',
     description:
-      'Designing AI automation systems that remove repetitive manual work from document-heavy and operations-heavy workflows.'
+      'Implement systems that reduce manual work, connect business tools, and make repetitive operations easier to run.',
+    href: '/bhiwandi/workflow-automation-developer'
   },
   {
-    title: 'PDF Extraction Systems',
+    title: 'RAG Chatbots',
     description:
-      'Building PDF extraction pipelines that turn invoices, forms, reports, and scanned files into structured JSON and validated records.'
+      'Build retrieval-backed chat systems that help teams and customers access trusted internal knowledge faster.',
+    href: '/bhiwandi/rag-systems'
   },
   {
-    title: 'RAG Chatbot Development for SaaS',
+    title: 'Document Automation',
     description:
-      'Creating retrieval-augmented chat systems for SaaS products so teams and customers can access trusted knowledge faster.'
+      'Turn PDFs, forms, and unstructured records into validated structured data that can move through real workflows.',
+    href: '/bhiwandi/document-workflow-automation'
   },
   {
-    title: 'Workflow Automation with LLMs',
+    title: 'SEO / Local SEO',
     description:
-      'Orchestrating LLM-driven workflows with validation, routing logic, and integrations to make AI useful inside real business processes.'
+      'Implement the technical search foundations that help service businesses improve crawlability, relevance, and local discoverability.',
+    href: '/services/seo-geo-implementation'
   },
   {
-    title: 'Healthcare and Routing AI Solutions',
+    title: 'GEO / AI-search Visibility',
     description:
-      'Applying AI and optimization methods to healthcare operations, demand clustering, and routing problems with real constraints.'
+      'Improve how your business is understood by AI-assisted search systems through schema, content structure, internal linking, and discoverability work.',
+    href: '/services/seo-geo-implementation'
   }
 ];
 
@@ -118,13 +133,13 @@ export const problemsSolved: Problem[] = [
   },
   {
     title: 'Automate repetitive business workflows with AI',
-    description:
+      description:
       'Combine LLMs, APIs, and business rules to reduce task switching, manual triage, and avoidable turnaround time.'
   },
   {
-    title: 'Design AI systems for healthcare and routing problems',
+    title: 'Improve Google and AI-search visibility',
     description:
-      'Model operational constraints, optimize routes, and surface decision support for planning-heavy teams.'
+      'Fix metadata, schema, indexing, internal linking, and local search foundations so service businesses are easier to discover.'
   }
 ];
 
@@ -132,7 +147,7 @@ export const faqs = [
   {
     question: 'What does an AI Automation & RAG Engineer do?',
     answer:
-      'An AI Automation & RAG Engineer designs and ships systems that combine language models, retrieval pipelines, and workflow orchestration to automate operational tasks and improve decision speed.'
+      'This work combines AI automation, retrieval systems, document intelligence, and implementation-heavy search foundations to reduce manual work and improve how businesses are found and understood online.'
   },
   {
     question: 'How can AI automate PDF extraction workflows?',
@@ -150,9 +165,9 @@ export const faqs = [
       'Yes. With OCR, parsing, schema mapping, and validation layers, AI pipelines can reliably convert complex unstructured documents into structured fields and JSON outputs.'
   },
   {
-    question: 'Do you build AI systems for healthcare and routing use cases?',
+    question: 'What does SEO and GEO implementation mean in your work?',
     answer:
-      'Yes. I build practical AI systems for healthcare operations and routing optimization, including demand clustering, constraint-aware routing, and decision-support workflows.'
+      'It means implementing metadata, schema, indexing fixes, internal linking, local service pages, sitemap improvements, and AI-search visibility foundations so a business is easier to discover in Google and AI-assisted search.'
   },
   {
     question: 'Where is Mohammed Rafique Kuwari based?',
@@ -163,5 +178,10 @@ export const faqs = [
     question: 'When should a SaaS company use a RAG chatbot?',
     answer:
       'A SaaS company should use a RAG chatbot when product knowledge changes frequently and answers need to stay grounded in current documentation, support content, and internal knowledge sources.'
+  },
+  {
+    question: 'Who is SEO and local SEO implementation for?',
+    answer:
+      'It is for service businesses that need clearer technical SEO foundations, stronger local discoverability, and content structures that help both search engines and AI-assisted systems understand what the business does.'
   }
 ];
